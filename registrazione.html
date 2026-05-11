@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione - Volontariato Sanitario</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="text-center mb-4">
+                        <i class="fas fa-user-plus text-primary me-3"></i>REGISTRAZIONE
+                    </h1>
+
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body p-4">
+                            <h2 class="text-primary mb-4 text-center">
+                                <i class="fas fa-handshake me-2"></i>UNISCITI A NOI!
+                            </h2>
+                            <p class="text-center mb-4 lead">Se desideri diventare volontario in ambito sanitario, compila il modulo sottostante. Ti contatteremo al più presto per fornirti tutte le informazioni necessarie e guidarti nel percorso di inserimento.</p>
+
+                            <form id="registration-form">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="nome" class="form-label">
+                                            <i class="fas fa-user text-primary me-2"></i>Nome *
+                                        </label>
+                                        <input type="text" class="form-control form-control-lg" id="nome" required 
+                                               placeholder="Inserisci il tuo nome">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="cognome" class="form-label">
+                                            <i class="fas fa-envelope text-primary me-2"></i>Cognome *
+                                        </label>
+                                        <input type="text" class="form-control form-control-lg" id="cognome" required 
+                                               placeholder="Inserisci il tuo cognome">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">
+                                            <i class="fas fa-envelope text-primary me-2"></i>Email *
+                                        </label>
+                                        <input type="email" class="form-control form-control-lg" id="email" required 
+                                               placeholder="esempio@email.com">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="psswd" class="form-label">
+                                            <i class="fas fa-user text-primary me-2"></i>Password *
+                                        </label>
+                                        <input type="password" class="form-control form-control-lg" id="psswd" required 
+                                               placeholder="Inserisci la Password">
+                                    </div>
+                                    
+                                    
+                                </div>
+
+
+
+
+
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="telefono" class="form-label">
+                                            <i class="fas fa-phone text-primary me-2"></i>Telefono *
+                                        </label>
+                                        <input type="tel" class="form-control form-control-lg" id="telefono" required 
+                                               placeholder="+39 123 456 7890">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="eta" class="form-label">
+                                            <i class="fas fa-calendar text-primary me-2"></i>Età *
+                                        </label>
+                                        <input type="number" class="form-control form-control-lg" id="eta" min="18" max="99" required 
+                                               placeholder="Es. 25" pattern="">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="area" class="form-label">
+                                            <i class="fas fa-heart text-primary me-2"></i>Area di interesse *
+                                        </label>
+                                        <select class="form-select form-select-lg" id="area" required>
+                                            <option value="">Seleziona un'area</option>
+                                            <option value="donazione">
+                                                <i class="fas fa-tint"></i> Donazione di Sangue e Organi
+                                            </option>
+                                            <option value="ospedali">
+                                                <i class="fas fa-hospital"></i> Supporto negli Ospedali
+                                            </option>
+                                            <option value="assistenza">
+                                                <i class="fas fa-hands-helping"></i> Assistenza a Persone con Malattie
+                                            </option>
+                                            <option value="primo-soccorso">
+                                                <i class="fas fa-ambulance"></i> Primo Soccorso e Emergenze
+                                            </option>
+                                            <option value="altro">
+                                                <i class="fas fa-plus"></i> Altro
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="disponibilita" class="form-label">
+                                            <i class="fas fa-clock text-primary me-2"></i>Disponibilità settimanale *
+                                        </label>
+                                        <select class="form-select form-select-lg" id="disponibilita" required>
+                                            <option value="">Seleziona</option>
+                                            <option value="2-4">2-4 ore</option>
+                                            <option value="4-8">4-8 ore</option>
+                                            <option value="8+">Più di 8 ore</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="esperienze" class="form-label">
+                                        <i class="fas fa-briefcase text-primary me-2"></i>Esperienze precedenti di volontariato 
+                                        <span class="text-muted">(opzionale)</span>
+                                    </label>
+                                    <textarea class="form-control" id="esperienze" rows="4" 
+                                              placeholder="Descrivi le tue esperienze precedenti nel volontariato..."></textarea>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="motivazione" class="form-label">
+                                        <i class="fas fa-lightbulb text-primary me-2"></i>Perché vuoi diventare volontario? *
+                                    </label>
+                                    <textarea class="form-control" id="motivazione" rows="4" required 
+                                              placeholder="Racconta le tue motivazioni..."></textarea>
+                                </div>
+
+                                <div class="mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="privacy" required>
+                                        <label class="form-check-label" for="privacy">
+                                            <i class="fas fa-shield-alt text-success me-2"></i>
+                                            Acconsento al trattamento dei miei dati personali ai sensi del GDPR 
+                                            (Regolamento UE 2016/679) *
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="text-center">
+                                   <!-- <button type="button" class="btn btn-primary btn-lg px-5" onclick="salvaInJson()"> -->
+                                        <button type="submit" class="btn btn-primary btn-lg px-5" id="btn-submit">
+                                        <i class="fas fa-paper-plane me-2"></i>Invia Richiesta
+                                    </button>
+                                     <div id="messaggio-risposta" class="mt-3" style="display: none;"></div>
+
+                                </div>
+                            </form>
+
+                                <hr class="my-4">
+                                <p class="text-center mb-2">Hai già un account?</p>
+                                <div class="text-center">
+                                <a href="accesso.html" class="btn btn-outline-primary btn-lg px-5">
+                                    <i class="fas fa-sign-in-alt me-2"></i>Accedi
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    
+                    <div class="row mt-5">
+                        <div class="col-md-4 text-center mb-3">
+                            <div class="card border-0 bg-light h-100">
+                                <div class="card-body">
+                                    <i class="fas fa-clock fa-3x text-primary mb-3"></i>
+                                    <h5>Risposta Rapida</h5>
+                                    <p class="small">Ti contatteremo entro 48 ore dalla tua richiesta</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center mb-3">
+                            <div class="card border-0 bg-light h-100">
+                                <div class="card-body">
+                                    <i class="fas fa-graduation-cap fa-3x text-success mb-3"></i>
+                                    <h5>Formazione Gratuita</h5>
+                                    <p class="small">Corsi di formazione completamente gratuiti per tutti i volontari</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center mb-3">
+                            <div class="card border-0 bg-light h-100">
+                                <div class="card-body">
+                                    <i class="fas fa-users fa-3x text-warning mb-3"></i>
+                                    <h5>Comunità Solidale</h5>
+                                    <p class="small">Entra a far parte di una grande famiglia di volontari</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
