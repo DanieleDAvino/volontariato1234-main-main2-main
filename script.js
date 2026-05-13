@@ -261,11 +261,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if(risultato.successo) {//messaggio di successo
                 messaggioRisposta.className = 'alert alert-success mt-3';
-                messaggioRisposta.innerHTML = '<i class="fas fa-check-circle me-2"></i>Bentornato/a ' + risultato.nome + '! Reindirizzamento...';
 
-                setTimeout(() => {
-                    window.location.href = 'eventi.html';
-                }, 1500);
+                if(risultato.ruolo === 'admin') {
+                    messaggioRisposta.innerHTML = '<i class="fas fa-user-shield me-2"></i>Accesso admin! Reindirizzamento...';
+                    setTimeout(() => {
+                        window.location.href = 'admin.php?access=verified';
+                    }, 1000);
+                } else {
+                    messaggioRisposta.innerHTML = '<i class="fas fa-check-circle me-2"></i>Bentornato/a ' + risultato.nome + '! Reindirizzamento...';
+                    setTimeout(() => {
+                        window.location.href = 'eventi.html';
+                    }, 1500);
+                }
 
             } else {
                 messaggioRisposta.className = 'alert alert-danger mt-3';
