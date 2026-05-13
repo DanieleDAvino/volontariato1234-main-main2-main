@@ -32,6 +32,20 @@ try {
     );
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    //controlla prima se è admin
+    $stmtAdmin = $pdo->prepare("SELECT * FROM admin WHERE email = :email");
+    $stmtAdmin->execute([':email' => $email]);
+    $admin = $stmtAdmin->fetch(PDO::FETCH_ASSOC);
+
+    if ($admin && password_verify($psswd, $admin['psswd'])) {
+        echo json_encode([
+            'successo' => true,
+            'ruolo'    => 'admin',
+            'messaggio'=> 'Accesso admin effettuato!'
+        ]);
+        exit;
+    }
+
     //cerca l'utente tramite email
     $stmt = $pdo->prepare("SELECT * FROM registrazioni WHERE email = :email");
     $stmt->execute([':email' => $email]);
@@ -48,8 +62,9 @@ try {
         exit;
     }
 
-    echo json_encode([//tuttto ok per il login
+    echo json_encode([//tutto ok per il login
         'successo' => true,
+        'ruolo'    => 'utente',
         'messaggio' => 'Accesso effettuato!',
         'nome' => $utente['nome']
     ]);
